@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title%}Showing server information for {{ server_name }}{% endblock %}
+
+{% block head %}
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+	<script type="text/babel" src="{{ url_for('static', filename='js/mcserverinfo.js') }}"></script>
+{% endblock %}
+
+{% block onload %}setTimeout(() => loadServerInfo('{{ server_name }}'), 100){% endblock %}
+
+{% block body %}
+	<div class="maincontainer">
+	  <div class="servertitle">
+		<img id="favicon" class="favicon" src="{{ url_for('static', filename='img/spingrass.gif') }}" alt="{{ server_name }} favicon"></img>
+		<span class="servername">{{ server_name }}</span>
+	  </div>
+	  <div id="description">????????????</div>
+	  <div><span id="onlineplayers">???</span> out of <span id="maxplayers">???</span> players online</div>
+	  <ul id="facelist" class="facelist">
+	  </ul>
+	  <span>
+		<a href="/server_enter">Enter a new server name</a>
+		<span> or </span>
+		<a href="/recent">See what has been searched</a>
+	  </span>
+	</div>
+	<div class="footer">
+	Thank you to <a href="https://crafatar.com">Crafatar</a> for providing avatars.
+	</div>
+{% endblock %}

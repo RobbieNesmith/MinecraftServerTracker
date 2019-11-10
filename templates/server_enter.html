@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block title %}Enter a server name{% endblock %}
+
+{% block body %}
+<h1>Enter a server name</h1>
+<form action="/server_info">
+<input name="server_name"></input>
+<input type="submit"></input>
+</form>
+<a href="/recent">Show recent searches</a>
+<a href="/server_history?server_name=wertycraft.com">Wertycraft history</a>
+{% endblock %}
