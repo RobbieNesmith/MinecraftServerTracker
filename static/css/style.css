@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1rem;
+}
+
+.servertitle {
+  height: 3rem;
+}
+
+.servername {
+  position: relative;
+  top: -1rem;
+  font-size: 2rem;
+}
+
+.favicon {
+  height: 100%;
+}
+
+.face {
+  width: 2rem;
+  height: 2rem;
+}
+
+.smallFace {
+  width: 1rem;
+  height: 1rem;
+}
+
+.facelist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.username {
+  position: relative;
+  top: -0.5rem;
+  margin-left: 0.5rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 2rem;
+  width: 100%;
+  background: #eee;
+  padding-top: 1rem;
+  border-top: solid 1px #666;
+  box-shadow: 0 3rem 1rem -2rem inset rgba(0,0,0,0.25);
+}
+
+.playerListTable {
+  border-spacing: 0;
+  border: solid 1px #ccc;
+  border-bottom: none;
+}
+
+.playerListCell {
+  padding: 0;
+}
+
+td {
+  border-bottom: solid 1px #ccc;
+}
+
+.playerIndicator {
+  width: 0.25rem;
+  height: 1rem;
+}
+
+.serverAlive {
+  background-color: green;
+}
+
+.serverDead {
+  background-color: red;
+}

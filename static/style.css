@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.servertitle {
+  height: 3rem;
+}
+
+.favicon {
+  height: 100%;
+}
+
+.face {
+  width: 2rem;
+  height: 2rem;
+}
+
+.facelist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 2rem;
+  width: 100%;
+  background: #eee;
+  padding-top: 1rem;
+  border-top: solid 1px #666;
+  box-shadow: 0 3rem 1rem -2rem inset rgba(0,0,0,0.25);
+}

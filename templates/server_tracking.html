@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Server history for {{ server_name }}{% endblock %}
+
+{% block head %}
+		<script type="text/babel" src="{{ url_for('static', filename='js/mcservertracking.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/palette.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+	<h1>Server history for {{ server_name }}</h1>
+	<div
+		id="serverInfo"
+		data-server-name="{{ server_name }}"
+	></div>
+{% endblock %}

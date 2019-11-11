@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Recent Server Searches{% endblock %}
+
+{% block body %}
+	<h1>Recent Server Searches</h1>
+	<ul>
+		{% for search in recent_searches %}
+		<li>
+			<a href="/server_info?server_name={{ search }}">
+				{{ search }}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<a href="/server_enter">Search for a server</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+.face {
+  width: 2em;
+  height: 2em;
+}
+
+.facelist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
