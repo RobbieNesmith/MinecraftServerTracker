@@ -1,0 +1,4 @@
+servertracking
+*.swp
+env
+__pycache__
