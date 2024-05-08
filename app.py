@@ -1,4 +1,4 @@
-from mcstatus import MinecraftServer
+from mcstatus import JavaServer
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import json
 import socket
@@ -38,7 +38,7 @@ def json_server_info():
   server_name = request.args.get("server_name")
   if server_name:
     try:
-      mcserver = MinecraftServer.lookup(server_name)
+      mcserver = JavaServer.lookup(server_name)
       server_status = mcserver.status()
       if server_status.players.sample:
         sample = [{"name": p.name, "id": p.id} for p in server_status.players.sample]
@@ -49,7 +49,7 @@ def json_server_info():
           "players": {"online": server_status.players.online,
               "max": server_status.players.max,
               "sample" : sample},
-          "favicon": server_status.favicon,
+          "favicon": server_status.icon,
           "version": {"name": server_status.version.name,
               "protocol": server_status.version.protocol},
           "latency": server_status.latency

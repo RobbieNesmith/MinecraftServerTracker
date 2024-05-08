@@ -1,4 +1,4 @@
-from mcstatus import MinecraftServer
+from mcstatus import JavaServer
 import sys
 import datetime
 import json
@@ -13,7 +13,7 @@ onlineplayers = []
 latency = 0
 
 try:
-    server = MinecraftServer.lookup(server_name)
+    server = JavaServer.lookup(server_name)
     status = server.status()
     latency = status.latency
     isOk = True
