@@ -2,3 +2,4 @@ servertracking
 *.swp
 env
 __pycache__
+.env

@@ -2,6 +2,13 @@ from mcstatus import JavaServer
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import json
 import socket
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+host = os.getenv("MCINFO_HOST", "127.0.0.1")
+port = os.getenv("MCINFO_PORT", "8000")
 
 app = Flask(__name__)
 
@@ -73,4 +80,4 @@ def json_server_track():
   except FileNotFoundError:
     return jsonify({"error": "FileNotFoundError", "message": "File not found, make sure to enter the date in UTC."})
 
-app.run(port=8000)
+app.run(host=host, port=int(port))
