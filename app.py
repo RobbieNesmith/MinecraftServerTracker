@@ -73,4 +73,4 @@ def json_server_track():
   except FileNotFoundError:
     return jsonify({"error": "FileNotFoundError", "message": "File not found, make sure to enter the date in UTC."})
 
-app.run(host="0.0.0.0", port=8000)
+app.run(port=8000)
