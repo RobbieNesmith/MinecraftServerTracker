@@ -2,6 +2,13 @@ from mcstatus import JavaServer
 import sys
 import datetime
 import json
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+basedir = os.getenv("MCINFO_BASEDIR", "/tmp")
 
 if len(sys.argv) != 2:
   exit()
@@ -23,7 +30,7 @@ except Exception as e:
     print(e)
     isOk = False
 
-filename = "/home/pi/minecraftinfoserver/servertracking/minecraft-server-info-{}-{}-{}-{}.json".format(server_name, now.year, now.month, now.day)
+filename = os.path.join(basedir, "minecraft-server-info-{}-{}-{}-{}.json".format(server_name, now.year, now.month, now.day))
 
 try:
     logfile = open(filename, "r")

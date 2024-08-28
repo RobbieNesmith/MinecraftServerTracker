@@ -10,6 +10,7 @@ load_dotenv()
 host = os.getenv("MCINFO_HOST", "127.0.0.1")
 port = os.getenv("MCINFO_PORT", "8000")
 servers = json.loads(os.getenv("MCINFO_SERVERS", "{}"))
+basedir = os.getenv("MCINFO_BASEDIR", "/tmp")
 
 app = Flask(__name__)
 
@@ -77,7 +78,7 @@ def json_server_track():
   month = request.args.get("month")
   day = request.args.get("day")
   try:
-    return jsonify(json.load(open("servertracking/minecraft-server-info-{}-{}-{}-{}.json".format(server_name, year, month, day))))
+    return jsonify(json.load(open(os.path.join(basedir, "minecraft-server-info-{}-{}-{}-{}.json".format(server_name, year, month, day)))))
   except FileNotFoundError:
     return jsonify({"error": "FileNotFoundError", "message": "File not found, make sure to enter the date in UTC."})
 
