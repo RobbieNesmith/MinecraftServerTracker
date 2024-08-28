@@ -10,5 +10,7 @@
 <input type="submit"></input>
 </form>
 <a href="/recent">Show recent searches</a>
-<a href="/server_history?server_name=wertycraft.com">Wertycraft history</a>
+{% for server in servers %}
+<a href="/server_history?server_name={{ server.url }}">{{ server.name }} History</a>
+{% endfor %}
 {% endblock %}

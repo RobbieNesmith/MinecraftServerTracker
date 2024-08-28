@@ -9,6 +9,7 @@ load_dotenv()
 
 host = os.getenv("MCINFO_HOST", "127.0.0.1")
 port = os.getenv("MCINFO_PORT", "8000")
+servers = json.loads(os.getenv("MCINFO_SERVERS", "{}"))
 
 app = Flask(__name__)
 
@@ -16,7 +17,7 @@ recent_searches = []
 
 @app.route("/server_enter")
 def server_enter():
-  return render_template("server_enter.html")
+  return render_template("server_enter.html", servers=servers)
 
 @app.route("/server_info")
 def server_info_ajax():
