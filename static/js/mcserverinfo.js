@@ -21,7 +21,7 @@ function generatePlayerListElement(playerName, playerId) {
   let image = document.createElement("img");
   let fetchedImage = new Image();
   fetchedImage.onload = () => { setTimeout(() => { image.src = fetchedImage.src }, 100) };
-  fetchedImage.src = `https://crafatar.com/avatars/${playerId}?overlay&size=32`;
+  fetchedImage.src = `https://mc-heads.net/avatar/${playerId}`;
   image.src = "/static/img/spingrass.gif";
   image.className = "face";
   nameHolder.innerText = playerName;

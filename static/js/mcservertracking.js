@@ -153,7 +153,7 @@ class PlayerTableRow extends React.Component {
 	componentDidMount() {
 		let fetchedImage = new Image();
 		fetchedImage.onload = () => { setTimeout(() => { this.setState({imgUrl: fetchedImage.src })}, 100) };
-		fetchedImage.src = `https://crafatar.com/avatars/${this.props.playerId}?overlay&size=16`;
+		fetchedImage.src = `https://mc-heads.net/avatar/${this.props.playerId}`;
 	}
 
 	render() {

@@ -87,7 +87,7 @@ function generateTable(history) {
 		let playerImageLink = document.createElement("a");
 		let fetchedImage = new Image();
 		fetchedImage.onload = () => { setTimeout(() => { playerImage.src = fetchedImage.src }, 100) };
-		fetchedImage.src = `https://crafatar.com/avatars/${players[player]}?size=16`;
+		fetchedImage.src = `https://mc-heads.net/avatar/${players[player]}`;
 		playerImageLink.href=`https://namemc.com/profile/${players[player]}`;
 		playerImage.src = "/static/img/spingrass.gif";
 		playerImage.className = "smallFace";
