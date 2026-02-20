@@ -5,7 +5,7 @@ function loadServerInfo(serverName) {
       })
       .then(function(server_info) {
         document.getElementById("favicon").src = server_info.favicon;
-        document.getElementById("description").innerText = server_info.description.text;
+        document.getElementById("description").innerText = server_info.description;
         document.getElementById("onlineplayers").innerText = server_info.players.online;
         document.getElementById("maxplayers").innerText = server_info.players.max;
         let playerList = document.getElementById("facelist");
