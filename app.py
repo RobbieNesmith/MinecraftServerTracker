@@ -80,6 +80,6 @@ def json_server_track():
   try:
     return jsonify(json.load(open(os.path.join(basedir, "minecraft-server-info-{}-{}-{}-{}.json".format(server_name, year, month, day)))))
   except FileNotFoundError:
-    return jsonify({"error": "FileNotFoundError", "message": "File not found, make sure to enter the date in UTC."})
+    return jsonify({"error": "FileNotFoundError", "message": "File not found, make sure to enter the date in the server's time zone."})
 
 app.run(host=host, port=int(port))

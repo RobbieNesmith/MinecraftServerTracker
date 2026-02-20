@@ -1,9 +1,9 @@
 class ServerHistoryPage extends React.Component {
 	render() {
 		let today = new Date();
-		let todayYear = today.getUTCFullYear();
-		let todayMonth = today.getUTCMonth() + 1;
-		let todayDay = today.getUTCDate();
+		let todayYear = today.getFullYear();
+		let todayMonth = today.getMonth() + 1;
+		let todayDay = today.getDate();
 
 		const urlParams = new URLSearchParams(window.location.search);
 		const urlYear = urlParams.get("year");
@@ -12,15 +12,15 @@ class ServerHistoryPage extends React.Component {
 
 		if (urlYear) {
 			todayYear = urlYear;
-			today.setUTCFullYear(urlYear);
+			today.setFullYear(urlYear);
 		}
 		if (urlMonth) {
 			todayMonth = urlMonth;
-			today.setUTCMonth(urlMonth - 1);
+			today.setMonth(urlMonth - 1);
 		}
 		if (urlDay) {
 			todayDay = urlDay;
-			today.setUTCDate(urlDay);
+			today.setDate(urlDay);
 		}
 		return (
 			<div>
@@ -38,9 +38,9 @@ class PlayerTable extends React.Component {
 	}
 
 	componentDidMount() {
-		const todayYear = this.props.date.getUTCFullYear();
-		const todayMonth = this.props.date.getUTCMonth() + 1;
-		const todayDay = this.props.date.getUTCDate();
+		const todayYear = this.props.date.getFullYear();
+		const todayMonth = this.props.date.getMonth() + 1;
+		const todayDay = this.props.date.getDate();
 		fetch(`/api/server_history?server_name=${this.props.serverName}&year=${todayYear}&month=${todayMonth}&day=${todayDay}`)
 			.then(res => res.json())
 			.then(json => {
@@ -189,15 +189,15 @@ class DaySelectionButtons extends React.Component{
 	render() {
 		const buttonPrefix = `/server_history?server_name=${this.props.serverName}`;
 		let prevDate = new Date(this.props.date);
-		prevDate.setUTCDate(prevDate.getUTCDate() - 1)
+		prevDate.setDate(prevDate.getDate() - 1)
 		let nextDate = new Date(this.props.date);
-		nextDate.setUTCDate(nextDate.getUTCDate() + 1)
+		nextDate.setDate(nextDate.getDate() + 1)
 		return (
 			<div>
-				<a href={ `${buttonPrefix}&year=${prevDate.getUTCFullYear()}&month=${prevDate.getUTCMonth() + 1}&day=${prevDate.getUTCDate()}` }>
+				<a href={ `${buttonPrefix}&year=${prevDate.getFullYear()}&month=${prevDate.getMonth() + 1}&day=${prevDate.getDate()}` }>
 					<button>Previous Day</button>
 				</a>
-				<a href={ `${buttonPrefix}&year=${nextDate.getUTCFullYear()}&month=${nextDate.getUTCMonth() + 1}&day=${nextDate.getUTCDate()}` }>
+				<a href={ `${buttonPrefix}&year=${nextDate.getFullYear()}&month=${nextDate.getMonth() + 1}&day=${nextDate.getDate()}` }>
 					<button>Next Day</button>
 				</a>
 				<a href={ buttonPrefix }>
