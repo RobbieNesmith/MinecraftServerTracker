@@ -10,7 +10,7 @@
 {% block onload %}setTimeout(() => loadServerInfo('{{ server_name }}'), 100){% endblock %}
 
 {% block body %}
-	<div class="maincontainer">
+	<main>
 	  <div class="servertitle">
 		<img id="favicon" class="favicon" src="{{ url_for('static', filename='img/spingrass.gif') }}" alt="{{ server_name }} favicon"></img>
 		<span class="servername">{{ server_name }}</span>
@@ -24,8 +24,8 @@
 		<span> or </span>
 		<a href="/recent">See what has been searched</a>
 	  </span>
-	</div>
-	<div class="footer">
+	</main>
+	<footer>
 	Thank you to <a href="https://mc-heads.net/">mc-heads.net</a> for providing avatars.
-	</div>
+	</footer>
 {% endblock %}
